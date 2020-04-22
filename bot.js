@@ -3,8 +3,8 @@ const bot = new Discord.Client();
 const Token = require("./auth.json").token;
 
 bot.on('ready', () => {
-  console.log(`Logged in as ${bot.user.tag}!`);
-  bot.user.setActivity("Headbanging to hardstyle."); 
+   console.log(`Logged in as ${bot.user.tag}!`);
+   bot.user.setPresence({ activity: { name: 'with discord.js' }});
 });
 
 bot.on('message', msg => {
@@ -15,9 +15,13 @@ bot.on('message', msg => {
   {
     msg.reply("");
   }
-  if (m.includes("crille", 0))
+  if (m.includes("good bot", 0))
   {
-    msg.reply("Crille is hot. ;)");
+    msg.reply(":D");
+  }
+  else if (m.includes("bad bot", 0))
+  {
+    msg.reply(";-;");
   }
 });
 
