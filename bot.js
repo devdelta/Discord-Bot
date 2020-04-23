@@ -4,7 +4,7 @@ const Token = require("./auth.json").token;
 
 bot.on('ready', () => {
    console.log(`Logged in as ${bot.user.tag}!`);
-   bot.user.setPresence({ activity: { name: 'with discord.js' }});
+   bot.user.setPresence({ activity: { name: 'Motherland: Fort Salem' }});
 });
 
 bot.on('message', msg => {
@@ -22,6 +22,21 @@ bot.on('message', msg => {
   else if (m.includes("bad bot", 0))
   {
     msg.reply(";-;");
+  }
+  if (m =="!date"){
+    var t = new Date();
+var year = `${t.getFullYear()}`;
+var month = `${t.getMonth()+1}`;
+var day = `${t.getDate()}`;
+if(t.getMonth()+1<10)
+{
+  month = `0${t.getMonth()+1}`;
+}
+msg.reply(`${day}/${month}/${year}`);
+  }
+  if (m.includes("best show?",0))
+  {
+    msg.reply("Motherland: Fort Salem");
   }
 });
 
